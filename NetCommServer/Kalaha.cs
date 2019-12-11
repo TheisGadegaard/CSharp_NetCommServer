@@ -9,7 +9,7 @@ namespace NetCommServer
     class Kalaha
     {
 
-        private string player1, player2, activePlayer;
+        private string player1, player2, activePlayer;  
         private int[] board;
 
         public Kalaha(string player1, string player2)
@@ -122,11 +122,6 @@ namespace NetCommServer
                 }
             }
 
-            /*
-             * boolean extraTurn
-             * string winner
-             * int[] board
-             */
             string returnValue = "KALAHA " + activePlayer + " " + winner;
             for(int i = 0; i < board.Length; i++)
             {
@@ -135,7 +130,6 @@ namespace NetCommServer
 
             return returnValue;
         }
-
 
          void initiateBoard()
         {

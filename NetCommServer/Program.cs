@@ -10,7 +10,6 @@ namespace NetCommServer
     {
         static void Main(string[] args)
         {
-
             List<Chatroom> chatrooms = new List<Chatroom>();
 
             NetComm.Host Server;
@@ -28,7 +27,6 @@ namespace NetCommServer
 
             void Server_onConnection(string id)
             {
-
                 Console.WriteLine(id + " Connected");
                 Console.Write("Users connected: ");
                 for (int i = 0; i < Server.Users.Count(); i++)
@@ -44,8 +42,6 @@ namespace NetCommServer
 
                 sendChatroomUpdate(id);
 
-                //  Log.AppendText(id + " connected!" +
-                //  Environment.NewLine); //Updates the log textbox when new user joined
             }
             void Server_lostConnection(string id)
             {
@@ -60,8 +56,6 @@ namespace NetCommServer
                 printChatrooms();
                 sendChatroomUpdateAll();
 
-                //   Log.AppendText(id + " disconnected" +
-                //   Environment.NewLine); //Updates the log textbox when user leaves the room
             }
 
             void ClearEmptyRooms()
@@ -88,7 +82,7 @@ namespace NetCommServer
 
             void sendChatroomUpdate(string id)
             {
-                Console.WriteLine("sendChatroomUpdate() called by id=" + id);
+                // Console.WriteLine("sendChatroomUpdate() called by id=" + id);
                 string message = "CHATROOMS";
                 for (int i = 0; i < chatrooms.Count; i++)
                 {
@@ -102,7 +96,7 @@ namespace NetCommServer
 
             void sendChatroomUpdateAll()
             {
-                Console.WriteLine("sendChatroomUpdateAll called");
+                // Console.WriteLine("sendChatroomUpdateAll called");
                 string message = "CHATROOMS";
                 for (int i = 0; i < chatrooms.Count; i++)
                 {
@@ -288,10 +282,6 @@ namespace NetCommServer
                         break;
 
                 }
-
-                //   Log.AppendText(ID + ": " + ConvertBytesToString(Data) +
-                //   Environment.NewLine);   //Updates the log when a new message arrived, 
-                //converting the Data bytes to a string
             }
 
             string ConvertBytesToString(byte[] bytes)

@@ -26,10 +26,6 @@ namespace NetCommServer
         public void addUser(string ID)
         {
             userList.Add(ID);
-            /*if(playerList.Count < 2)
-            {
-                playerList.Add(ID);
-            } */
         }
 
         public string makeMove(int move)
