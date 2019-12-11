@@ -86,6 +86,13 @@ namespace NetCommServer
             {
                 board[6] += board[0] + board[1] + board[2] + board[3] + board[4] + board[5];
                 board[13] += board[7] + board[8] + board[9] + board[10] + board[11] + board[12];
+                for(int i = 0; i < board.Length; i++)
+                {
+                    if(i != 6 && i != 13)
+                    {
+                        board[i] = 0;
+                    }
+                }
 
                 if (board[6] > board[13])
                 {
