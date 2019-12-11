@@ -26,14 +26,10 @@ namespace NetCommServer
         public void addUser(string ID)
         {
             userList.Add(ID);
-            if(playerList.Count < 2)
+            /*if(playerList.Count < 2)
             {
                 playerList.Add(ID);
-            }
-            if(playerList.Count == 2)
-            {
-                kalaha = new Kalaha(playerList.ElementAt(0), playerList.ElementAt(0));
-            }
+            } */
         }
 
         public string makeMove(int move)

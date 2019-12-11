@@ -26,11 +26,14 @@ namespace NetCommServer
             Boolean extraTurn = false;
             string winner = "undecided";
 
+            Console.WriteLine("activePlayer=" + activePlayer + " player1=" + player1 + " player2=" + player2 + " move=" + move + " board[move]=" + board[move]);
+
             if (move > 12 || move < 0 || move == 6 ||
                (activePlayer == player1 && move > 5) ||
                (activePlayer == player2 && move < 7) ||
                board[move] == 0)
             {
+                Console.WriteLine("invalid move returned. activePlayer=" + activePlayer + " player1=" + player1 + " player2=" + player2 + " move=" + move + " board[move]=" + board[move]);
                 return "invalid move";
             }
 
@@ -110,7 +113,7 @@ namespace NetCommServer
 
             if (!extraTurn)
             {
-                if(activePlayer == player1)
+                if(activePlayer.Equals(player1))
                 {
                     activePlayer = player2;
                 } else
